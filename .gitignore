@@ -1,0 +1,16 @@
+__pycache__/
+docscope/__pycache__/
+
+Samplefiles/
+notebooks/
+tempfiles/
+
+.tox/
+.venv/
+.DS_Store
+DocScope.egg-info/
+tempfiles/
+
+logs.log
+nohup.out
+todo.txt
