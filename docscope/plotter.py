@@ -41,6 +41,12 @@ def st_plotter(output: str):
     pattern = r"(\w+)\.show\(\)"
 
     # Replace "<something>.show()" with "st.pyplot(<something>)"
-    modified_py_code = re.sub(pattern, r"st.pyplot(\1)", modified_py_code)
+    modified_py_code = re.sub(
+        pattern,
+        r"""col1, col2, col3 = st.columns(3)
+with col1:
+    st.pyplot(\1)""",
+        modified_py_code,
+    )
 
     executer(modified_py_code)

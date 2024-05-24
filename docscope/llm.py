@@ -57,7 +57,7 @@ def get_prompt(question, file_extension):
             sql_schema = st.session_state.selected_schemas
             return Mistral_7b_sql_prompt(question, sql_schema)
 
-        elif file_extension in ["pdf", "docx", "txt"]:
+        elif file_extension in ["pdf", "docx", "txt", "html"]:
 
             vectordb = doc_retrieval(st.session_state.current_file, file_extension)
             retrieved_chunk = get_compressed_docs(vectordb, question)

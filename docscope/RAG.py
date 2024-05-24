@@ -7,6 +7,7 @@ from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import TextLoader
 from langchain_community.document_loaders import Docx2txtLoader
+from langchain_community.document_loaders import BSHTMLLoader
 
 
 def doc_retrieval(uploaded_file, extension_type):
@@ -26,6 +27,9 @@ def doc_retrieval(uploaded_file, extension_type):
 
             if extension_type == "docx":
                 data = Docx2txtLoader(file_path=tmp_file_path).load()
+
+            if extension_type == "html":
+                data = BSHTMLLoader(file_path=tmp_file_path).load()
 
             text_splitter = RecursiveCharacterTextSplitter(
                 chunk_size=256, chunk_overlap=32

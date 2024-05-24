@@ -106,7 +106,7 @@ def app():
     with st.sidebar.form(key="my_form"):
         uploaded_file = st.file_uploader(
             "Upload File",
-            type=["csv", "xlsx", "pdf", "db", "sql", "txt", "docx"],
+            type=["csv", "xlsx", "pdf", "db", "sql", "txt", "docx", "html"],
             key="current_file",
         )
         file_submit_button = st.form_submit_button(
@@ -208,8 +208,9 @@ def app():
                 file_extension == "pdf"
                 or file_extension == "txt"
                 or file_extension == "docx"
+                or file_extension == "html"
             ):
-                st.write("pdf file uploaded")
+                st.write("Text BASED file uploaded")
 
             elif file_extension == "db":
                 results = getschemafromdb("tempfiles/" + file_name + ".db")
