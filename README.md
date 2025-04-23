@@ -33,3 +33,16 @@ to run flake8 and tests
 ```console
 tox
 ```
+&nbsp;
+<br>
+---
+![Description](_screenshots/Screenshot_1.png)
+&nbsp;
+---
+![Description](_screenshots/Screenshot_2.png)
+&nbsp;
+---
+![Description](_screenshots/Screenshot_3.png)
+&nbsp;
+---
+![Description](_screenshots/Screenshot_10.png)
